@@ -168,7 +168,7 @@ kubectl delete -f .
 
 ## 🖼️ Visual Overview
 
-![DevOps Kubernetes Diagram](./diagram.png)
+![](./Work-Flow.png)
 
 ---
 
