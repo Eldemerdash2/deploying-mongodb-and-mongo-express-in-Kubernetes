@@ -10,7 +10,8 @@ This setup showcases a classic two-tier application structure:
 - **MongoDB** → backend database
 - **Mongo Express** → web-based admin interface for MongoDB
 
-You’ll learn how to:
+🚀 Highlight:
+
 - Deploy applications using Kubernetes manifests (`.yaml` files)
 - Configure environment variables securely
 - Manage internal and external connectivity between services
@@ -45,7 +46,7 @@ Browser (HTTP Request: NodeIP:30000)
 ## ⚙️ Components
 
 ### 1. MongoDB Deployment
-- Creates a MongoDB Pod running the official `mongo` image.
+- Creates a MongoDB Pod running the latest official `mongo` image.
 - Exposes **port 27017**.
 - Credentials (username/password) are not hardcoded but **referenced from a Kubernetes Secret**.
 
@@ -57,30 +58,10 @@ Browser (HTTP Request: NodeIP:30000)
 ### 3. Secret (`mongodb-secret`)
 Stores MongoDB credentials securely.
 
-Example:
-```yaml
-apiVersion: v1
-kind: Secret
-metadata:
-  name: mongodb-secret
-type: Opaque
-data:
-  username: bW9uZ291c2Vy  # base64 encoded
-  password: c2VjdXJlUGFzcw==  # base64 encoded
-```
 
 ### 4. ConfigMap (`mongodb-configmap`)
 Contains the MongoDB service endpoint for Mongo Express to connect to.
 
-Example:
-```yaml
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: mongodb-configmap
-data:
-  database_url: mongodb-service
-```
 
 ### 5. Mongo Express Deployment
 - Uses the `mongo-express` image.
@@ -189,17 +170,9 @@ kubectl delete -f .
 
 ![DevOps Kubernetes Diagram](./diagram.png)
 
-*(Replace the path with your actual image name if needed.)*
-
 ---
 
 ## 🧑‍💻 Author
 
 **Mohamed Eldemerdash**  
-DevOps Engineer & Kubernetes Enthusiast
-
----
-
-## 📜 License
-
-This project is licensed under the [MIT License](LICENSE).
+DevOps Engineer & Mechanical Engineer
