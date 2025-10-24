@@ -147,7 +147,7 @@ Contains the MongoDB service endpoint for Mongo Express to connect to.
 
 To verify the setup:
 ```bash
-kubectl logs deployment/mongo-express-deployment
+kubectl logs mongo-express-68c7cbfbfd-zjv2z
 kubectl describe service mongodb-service
 ```
 
