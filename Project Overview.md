@@ -98,33 +98,39 @@ Contains the MongoDB service endpoint for Mongo Express to connect to.
 
 1. **Start your Kubernetes cluster**
    ```bash
-   minikube start
+   minikube start --driver docker
    ```
+<img width="1188" height="537" alt="image" src="https://github.com/user-attachments/assets/55e8248a-f021-4213-a47d-ca311be711c7" />
 
 2. **Create the Secret**
    ```bash
-   kubectl apply -f mongodb-secret.yaml
+   kubectl apply -f mongo-secret.yaml
    ```
+<img width="1278" height="74" alt="image" src="https://github.com/user-attachments/assets/0a4afc40-7fb3-4d2d-b6a7-7426ced3930d" />
 
 3. **Create the ConfigMap**
    ```bash
-   kubectl apply -f mongodb-configmap.yaml
+   kubectl apply -f mongo-configmap.yaml
    ```
+   <img width="1315" height="72" alt="image" src="https://github.com/user-attachments/assets/a0c6ec01-1fe3-47f5-8da6-3f6e44840a68" />
 
 4. **Deploy MongoDB**
    ```bash
    kubectl apply -f mongo.yaml
    ```
+   <img width="1300" height="94" alt="image" src="https://github.com/user-attachments/assets/13666f34-48a3-4aa8-b209-a754655f9c9c" />
 
 5. **Deploy Mongo Express**
    ```bash
    kubectl apply -f mongo-express.yaml
    ```
+   <img width="1302" height="102" alt="image" src="https://github.com/user-attachments/assets/fda0267c-3ba3-49bf-8d40-ce574a7aa375" />
 
 6. **Check all resources**
    ```bash
    kubectl get all
    ```
+<img width="1293" height="403" alt="image" src="https://github.com/user-attachments/assets/7a2fd32e-e17d-46d8-983a-7479102ab766" />
 
 7. **Access the application**
    ```bash
