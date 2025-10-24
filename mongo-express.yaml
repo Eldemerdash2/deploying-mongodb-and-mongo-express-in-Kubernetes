@@ -20,6 +20,11 @@ spec:
           ports:
             - containerPort: 8081
           env:
+            - name: ME_CONFIG_MONGODB_SERVER
+              valueFrom:
+                configMapKeyRef:
+                  name: mongodb-configmap
+                  key: database_url
             - name: ME_CONFIG_MONGODB_ADMINUSERNAME
               valueFrom:
                 secretKeyRef:
@@ -30,12 +35,12 @@ spec:
                 secretKeyRef:
                   name: mongodb-secret
                   key: mongo-root-password
-            - name: ME_CONFIG_MONGODB_SERVER
-              valueFrom:
-                configMapKeyRef:
-                  name: mongodb-configmap
-                  key: database_url
+            - name: ME_CONFIG_BASICAUTH
+
+
 ---
+#Mongo Express Service
+
 apiVersion: v1
 kind: Service
 metadata:
